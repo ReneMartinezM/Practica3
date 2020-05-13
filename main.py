@@ -1,6 +1,6 @@
 import Cal
-import re
 import Letras
+import Operadores
 
 
 print("Ingresa tu expresion: ")
@@ -9,7 +9,7 @@ print(exp)
 
 
 if Letras.validaLetras(exp) == 0 :  #QUIERE DECIR QUE LA EXPRESION NO TIENE LETRAS O CARACTERES QUE NO SEAN NUMERO
-    r=1
+    Operadores.proximoOperador(exp)
 else :
   print("Operacion no valida")    
 
