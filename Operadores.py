@@ -20,7 +20,7 @@ def converToString(opelist):
   return cadena
 
 
-#Esta funcion vallida que en la cadena de solo divisiones, se pueda divir
+#Esta funcion valida que en la cadena de solo divisiones, se pueda divir
 def validaDivision(exp_cadena): 
   valido = 1;
    #RECORREMOS LA CADENA
@@ -34,6 +34,10 @@ def validaDivision(exp_cadena):
             
   
 
+
+
+
+
 def primerOperador(exp):
   op_division = '\d+[/]+\d+'
   opelist = re.findall(op_division,exp)#saco los 
@@ -44,9 +48,9 @@ def primerOperador(exp):
   
   #Enviamos la cadena de 1er operador(DIVISION), para validar si es posible.
   if(validaDivision(cadena) == 0): #regresa 1  si es posible y 0 si no es posible
-    return 0
+    return ' '
   else:
-    return 1
+    return cadena
 
   
  

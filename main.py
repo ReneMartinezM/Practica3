@@ -9,8 +9,23 @@ exp = input()
 
 
 if Letras.validaLetras(exp) == 0 :  #QUIERE DECIR QUE LA EXPRESION NO TIENE LETRAS O CARACTERES QUE NO SEAN NUMERO
-    if(Operadores.primerOperador(exp) == 1):
+    cadena = Operadores.primerOperador(exp) 
+    if(cadena != ' '):
       print("Divison valida")
+      for i in range(0,len(cadena)):
+        print(cadena[i])
+        if(cadena[i] == '/'):
+         # numA = cadena[i-1]
+         # numB = cadena[i+1]
+         # print(numA)
+          #num = Cal.division(int(numA),int(numB))
+          #cadena[i] = num
+          #cadena[i-1] = ''
+          #cadena[i+1] = ''
+          num = Cal.division(int(cadena[i-1]),int(cadena[i+1]) )
+          print(num)
+          cadena[i] = chr(num)
+      #print(cadena)
     else: 
       print("Division invalida")  
 
