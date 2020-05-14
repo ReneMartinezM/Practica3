@@ -9,8 +9,12 @@ exp = input()
 
 
 if Letras.validaLetras(exp) == 0 :  #QUIERE DECIR QUE LA EXPRESION NO TIENE LETRAS O CARACTERES QUE NO SEAN NUMERO
-    Operadores.primerOperador(exp)
-else :
+    if(Operadores.primerOperador(exp) == 1):
+      print("Divison valida")
+    else: 
+      print("Division invalida")  
+
+else:
   print("Operacion no valida")    
 
 

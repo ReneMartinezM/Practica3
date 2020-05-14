@@ -43,7 +43,11 @@ def primerOperador(exp):
   cadena = converToString(opelist)
   
   #Enviamos la cadena de 1er operador(DIVISION), para validar si es posible.
-  validaDivision(cadena)#regresa 1  si es posible y 0 si no es posible
+  if(validaDivision(cadena) == 0): #regresa 1  si es posible y 0 si no es posible
+    return 0
+  else:
+    return 1
+
   
  
 
