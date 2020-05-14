@@ -10,7 +10,7 @@ exp = input()
 if Letras.validaLetras(exp) == 0 :  #QUIERE DECIR QUE LA EXPRESION NO TIENE LETRAS O CARACTERES QUE NO SEAN NUMERO
    # cadena = Operadores.primerOperador(exp) 
     #Operadores.Opera(cadena)
-  Operacion.
+  Operacion.priori(exp)
 
 
 
