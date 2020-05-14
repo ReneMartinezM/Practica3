@@ -1,4 +1,5 @@
 import re
+import Cal
 def opera(exp):
   op_division = '\d+[/]+\d+'
   #patron_decimales = '\d+[*]+\d+'#ENCUENTRA OPERADOR 
@@ -62,3 +63,20 @@ def primerOperador(exp):
 
     
   
+def Opera(cadena):
+  #Si entra a este if, la division se puede hacer y esta validada
+  if(cadena != ' '):
+    print("Divison valida")
+  for i in range(0,len(cadena)):
+      if(cadena[i] == '/'):
+        num = Cal.division(int(cadena[i-1]),int(cadena[i+1]) )
+       
+        print(num)
+       
+
+      else:
+        print("")  
+         
+  else:#la cadena no es valida
+    print("Operacion no valida")  
+         

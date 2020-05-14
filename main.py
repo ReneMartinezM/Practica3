@@ -1,36 +1,23 @@
 import Cal
 import Letras
 import Operadores
+import Operacion
 
-
+#ingresa la expresion
 print("Ingresa tu expresion: ")
 exp = input()
-
-
-
+#validamos las letras en la expresion
 if Letras.validaLetras(exp) == 0 :  #QUIERE DECIR QUE LA EXPRESION NO TIENE LETRAS O CARACTERES QUE NO SEAN NUMERO
-    cadena = Operadores.primerOperador(exp) 
-    if(cadena != ' '):
-      print("Divison valida")
-      for i in range(0,len(cadena)):
-        print(cadena[i])
-        if(cadena[i] == '/'):
-         # numA = cadena[i-1]
-         # numB = cadena[i+1]
-         # print(numA)
-          #num = Cal.division(int(numA),int(numB))
-          #cadena[i] = num
-          #cadena[i-1] = ''
-          #cadena[i+1] = ''
-          num = Cal.division(int(cadena[i-1]),int(cadena[i+1]) )
-          print(num)
-          cadena[i] = chr(num)
-      #print(cadena)
-    else: 
-      print("Division invalida")  
+   # cadena = Operadores.primerOperador(exp) 
+    #Operadores.Opera(cadena)
+  Operacion.
 
-else:
-  print("Operacion no valida")    
+
+
+
+
+
+
 
 
 
