@@ -11,7 +11,7 @@ def priori(exp_principal):
   if( lista != 0):
     print('Division valida')
     cadena = converToString(lista)
-    print(validaDivision(cadena))
+    print(Opera(cadena))
 
   else:
     print('Divsion Invalida')
@@ -49,18 +49,18 @@ def converToString(opelist):
 
 
 def Opera(cadena):
+  cad = ' '
   #Si entra a este if, la division se puede hacer y esta validada
-  if(cadena != ' '):
-    print("Divison valida")
-  for i in range(0,len(cadena)):
+  if(cadena != ' '): 
+    for i in range(0,len(cadena)):
       if(cadena[i] == '/'):
         num = Cal.division(int(cadena[i-1]),int(cadena[i+1]) )
-       
-        print(num)
-       
+        cad = cad +" "+ format(num)
+  return cad      
 
-      else:
-        print("")  
-         
-  else:#la cadena no es valida
-    print("Operacion no valida") 
+        
+
+        
+     
+
+   
