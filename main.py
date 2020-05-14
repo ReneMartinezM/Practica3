@@ -5,11 +5,11 @@ import Operadores
 
 print("Ingresa tu expresion: ")
 exp = input()
-print(exp)
+
 
 
 if Letras.validaLetras(exp) == 0 :  #QUIERE DECIR QUE LA EXPRESION NO TIENE LETRAS O CARACTERES QUE NO SEAN NUMERO
-    Operadores.proximoOperador(exp)
+    Operadores.primerOperador(exp)
 else :
   print("Operacion no valida")    
 

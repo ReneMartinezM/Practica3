@@ -4,7 +4,7 @@ def validaLetras(exp):
   patron2 = '[a-zA-Z]'##Esto dice que encontro almenos una letra
   
   opelist = re.findall(patron2,exp);
-  print(opelist)
+  #print(opelist)
 
   if(len(opelist)>0):
      val = 1
