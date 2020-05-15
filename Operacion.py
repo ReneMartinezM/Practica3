@@ -10,13 +10,13 @@ def priori(exp_principal):
   lista = verificaOperador(exp_div,exp_principal)
   if( lista != 0):
     print('Division valida')
-    cadena = converToString(lista)
-    print(Opera(cadena))
+    cadena     = converToString(lista)
+    cadena_div = Opera(cadena)
+    print(cadena_div)
+    modificaExpresion(cadena_div,exp_principal,exp_div)
 
   else:
     print('Divsion Invalida')
-
-
   #2 en priorirdad la Multiplicacion
   '''lista = validaOperador(exp_mult,exp_principal)
   if(lista != 0):
@@ -60,7 +60,23 @@ def Opera(cadena):
 
         
 
-        
+def modificaExpresion(cadena_div,exp_principal,exp_div):
+  #print(exp_div)
+  
+
+  for i in range(0,len(cadena_div)):
+    if(cadena_div[i] =='.'):
+      aux = cadena_div[i-1]+'.'+cadena_div[i+1]
+      print(aux)
+      nueva_cad = re.sub(exp_div,aux,exp_principal)
+    else:
+      aux = ' '
+
+  print(nueva_cad)
+
+
+
+
      
 
    
