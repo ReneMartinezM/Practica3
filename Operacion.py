@@ -13,7 +13,7 @@ def priori(exp_principal):
     cadena     = converToString(lista)
     cadena_div = Opera(cadena)
     print(cadena_div)
-    modificaExpresion(cadena_div,exp_principal,exp_div)
+    modificaExpresion(cadena_div,exp_principal,lista)
 
   else:
     print('Divsion Invalida')
@@ -60,18 +60,18 @@ def Opera(cadena):
 
         
 
-def modificaExpresion(cadena_div,exp_principal,exp_div):
-  #print(exp_div)
+def modificaExpresion(cadena_div,exp_principal,cadena):
   
-
-  for i in range(0,len(cadena_div)):
-    if(cadena_div[i] =='.'):
-      aux = cadena_div[i-1]+'.'+cadena_div[i+1]
-      print(aux)
-      nueva_cad = re.sub(exp_div,aux,exp_principal)
-    else:
-      aux = ' '
-
+  i = 0
+  aux = ' '
+  nueva_cad = exp_principal
+  for j in range(0,len(cadena_div)):
+    if(cadena_div[j] =='.'):
+      aux = cadena_div[j-1]+'.'+cadena_div[j+1]
+      nueva_cad = re.sub(cadena[i],aux,nueva_cad)
+      print("cadena"+cadena[i])
+      i = i + 1
+      #print("cadena antes de otro for"+nueva_cad)
   print(nueva_cad)
 
 
