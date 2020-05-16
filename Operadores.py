@@ -1,7 +1,7 @@
 import re
 import Cal
 def opera(exp):
-  op_division = '\d+[/]+\d+'
+  op_division = '(\d*.\d*[/]\d*.\d*)'
   #patron_decimales = '\d+[*]+\d+'#ENCUENTRA OPERADOR 
   
  # patron_enteros   = '^(\d+|\d+[.]\d+)[+]^(\d+|\d+[.]\d+)'
