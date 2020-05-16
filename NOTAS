@@ -1,0 +1,43 @@
+#Hasta aqui tenemos ua lista donde solo viene los numeros del numerador y pegado el /
+cad =" "
+cadena = Operacion.converToString(dcilist)
+lista = re.findall(patrondeci,cadena)
+print(lista)
+#Aqui igual, pero esto se depuara para tner iuna lista sin el operador / 
+nuevaCad = Operacion.converToString(lista)
+cadenaNumeradores = re.sub('/','',nuevaCad)
+print(cadenaNumeradores)
+listaNueva = cadenaNumeradores.split(sep=' ')
+print(listaNueva)
+for i in range(0,len(listaNueva)):
+  if(listaNueva[i]!=''):
+    num = Cal.division(listaNueva[i],listaNueva[i+1])
+    cad = cad +" "+ format(num)
+    #cad = cad +" "+ format(1.0)
+print(cad) 
+#validamos las letras en la expresion
+#if Letras.validaLetras(exp) == 0 :  #QUIERE DECIR QUE LA EXPRESION NO TIENE LETRAS O CARACTERES QUE NO SEAN NUMERO
+   # cadena = Operadores.primerOperador(exp) 
+    #Operadores.Opera(cadena)
+  #Operacion.priori(exp)
+  
+
+
+
+
+
+
+
+
+
+
+
+#OPERADORES
+#patron_op = '([\sa-z][\>][^\r][^\#][\s0-9]|[|>][0-9]|[0-9\s][\<][^a-z]|&|=|[*]|[+]|%|[-])'
+#patron2 = '[a-zA-Z]'##Esto dice que encontro almenos una letra
+#patron3 = '[^\s\da-zA-Z]'
+#opelist = re.findall(patron2,exp);
+#print(opelist)
+
+#print("Hay: ",str(len(opelist)),"Operadores y son: ")
+#print(opelist);

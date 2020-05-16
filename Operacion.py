@@ -10,12 +10,14 @@ def priori(exp_principal):
   lista = verificaOperador(exp_div,exp_principal)
   if( lista != 0):
     print('Division valida')
-    
     cadena      =  converToString(lista)
-    cadena_div  =  Opera(cadena)
-    #print(cadena)
-    #cadenaTotal =  modificaExpresion(cadena_div,#exp_principal,lista)
-   # print(cadenaTotal)
+    if(validaDivision(cadena) == 1):
+      cad_libre = liberaSeparaExpresion(cadena,'/')
+      cadenaTotal = realizaDivision(cad_libre)
+      cadenaTotal = modificaExpresion(cadenaTotal,exp_principal,)
+      print(cadenaTotal)
+    else:
+      print("Division entre cero invalida")
   else:
     print('Divsion Invalida')
   #2 en priorirdad la Multiplicacion
@@ -40,33 +42,49 @@ def verificaOperador(ope,exp):
 
 
 
-
 def converToString(opelist):
   cadena = ' '
   for i in range(0,len(opelist)):
     cadena = cadena+' '+opelist[i]
   return cadena  
 
+def validaDivision(cadena):
+ exp1 = '/(0$|0\s|0\-|0\*|0\+|0.0)'
+ lista = re.findall(exp1,cadena)
+ print("Lista",lista)
+ if(len(lista)>0):
+   return 0
+ else:
+   return 1  
+ 
 
 
-def Opera(cadena):
-  cad = ' '
-  #Si entra a este if, la division se puede hacer y esta validada
-  print(cadena)
-  if(cadena != ' '): 
-    for i in range(0,len(cadena)):
-      if(cadena[i] == '/'):
-        print(cadena[i+1], cadena[i-1])
+def liberaSeparaExpresion(exp,operador):
+  #Separo la expresion cada vez que haya una division
+  lista = re.split(operador,exp)
+  #La lista la paso a string y separo la cadena cada vez que hay espacios
+  cadena = converToString(lista)
+  nombreLista = re.split(" ",cadena)
+  #Quito los Espacios de la lista que salio, para que no haya espacios
+  nombreLista = [i for i in nombreLista if i ]
+  #tenemos la lista separada
+  return nombreLista
 
-        #num = Cal.division(int(cadena[i-1]),int(cadena[i+1]) )
-        #cad = cad +" "+ format(num)
-        cad = cad +" "+ format(1.0)
-  return cad      
+def realizaDivision(lista):
+
+  #Este for es para hacer la operacion de la division
+  cad = " "
+  for i in range(0,len(lista)):
+    if(i%2==0):
+      num = Cal.division(float(lista[i]),float(lista[i+1]))
+      cad = cad +" "+ format(num)
+  
+  return cad
+
 
         
 
 def modificaExpresion(cadena_div,exp_principal,cadena):
-  
   i = 0
   aux = ' '
   nueva_cad = exp_principal
@@ -77,7 +95,6 @@ def modificaExpresion(cadena_div,exp_principal,cadena):
       i = i + 1
   
   return nueva_cad
-
 
 
      
