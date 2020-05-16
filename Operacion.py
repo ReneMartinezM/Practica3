@@ -12,9 +12,9 @@ def priori(exp_principal):
     print('Division valida')
     cadena      =  converToString(lista)
     if(validaDivision(cadena) == 1):
-      cad_libre = liberaSeparaExpresion(cadena,'/')
-      cadenaTotal = realizaDivision(cad_libre)
-      cadenaTotal = modificaExpresion(cadenaTotal,exp_principal,)
+      cad_libre     = liberaSeparaExpresion(cadena,'/')
+      cadena_result = realizaDivision(cad_libre)
+      cadenaTotal   = modificaExpresion(lista,cadena_result,exp_principal)
       print(cadenaTotal)
     else:
       print("Division entre cero invalida")
@@ -84,16 +84,22 @@ def realizaDivision(lista):
 
         
 
-def modificaExpresion(cadena_div,exp_principal,cadena):
+def modificaExpresion(lt_patron,cad_result,exp_principal):
   i = 0
   aux = ' '
   nueva_cad = exp_principal
-  for j in range(0,len(cadena_div)):
-    if(cadena_div[j] =='.'):
-      aux = cadena_div[j-1]+'.'+cadena_div[j+1]
-      nueva_cad = re.sub(cadena[i],aux,nueva_cad)
+  for j in range(0,len(cad_result)):
+    if(cad_result[j] =='.'):
+      
+      
+      aux = cad_result[j-1]+'.'+cad_result[j+1]
+      print("PATRON",lt_patron[i])
+      print("REMPLAZO",aux)
+      print("CADENA ORIGINAL",exp_principal)
+      nueva_cad = re.sub(lt_patron[i],aux,exp_principal)
       i = i + 1
-  
+  print("NuevaCadena")
+  print(nueva_cad)
   return nueva_cad
 
 
