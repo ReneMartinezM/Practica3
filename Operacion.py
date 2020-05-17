@@ -15,7 +15,7 @@ def priori(exp_principal):
       cad_libre     = liberaSeparaExpresion(cadena,'/')
       cadena_result = realizaDivision(cad_libre)
       cadenaTotal   = modificaExpresion(lista,cadena_result,exp_principal)
-      print(cadenaTotal)
+      #print(cadenaTotal)
     else:
       print("Division entre cero invalida")
   else:
@@ -51,7 +51,7 @@ def converToString(opelist):
 def validaDivision(cadena):
  exp1 = '/(0$|0\s|0\-|0\*|0\+|0.0)'
  lista = re.findall(exp1,cadena)
- print("Lista",lista)
+ 
  if(len(lista)>0):
    return 0
  else:
@@ -85,22 +85,19 @@ def realizaDivision(lista):
         
 
 def modificaExpresion(lt_patron,cad_result,exp_principal):
-  i = 0
-  aux = ' '
+
   nueva_cad = exp_principal
-  for j in range(0,len(cad_result)):
-    if(cad_result[j] =='.'):
-      
-      
-      aux = cad_result[j-1]+'.'+cad_result[j+1]
-      print("PATRON",lt_patron[i])
-      print("REMPLAZO",aux)
-      print("CADENA ORIGINAL",exp_principal)
-      nueva_cad = re.sub(lt_patron[i],aux,exp_principal)
-      i = i + 1
-  print("NuevaCadena")
-  print(nueva_cad)
-  return nueva_cad
+  lista_cad_result = cad_result.split() 
+
+  for i in range(0,len(lt_patron)):
+    nueva_cad = re.sub(lt_patron[i],lista_cad_result[i],nueva_cad)
+
+  nueva_cad = sentence = re.sub(r"\s+", "", nueva_cad, flags=re.UNICODE)
+  return nueva_cad 
+ 
+ 
+
+
 
 
      
