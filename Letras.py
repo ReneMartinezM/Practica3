@@ -8,5 +8,9 @@ def validaLetras(exp):
 
   if(len(opelist)>0):
      val = 1
+     print("La expresion no debe te ner letras")
+  else:
+    print("La expresion es valida")
+  
   return val
   
